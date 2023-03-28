@@ -1,0 +1,15 @@
+C:\Users\bhari\source\repos\TaskManager\TaskManager.Data.Models\bin\Debug\net6.0\TaskManager.Data.Models.exe
+C:\Users\bhari\source\repos\TaskManager\TaskManager.Data.Models\bin\Debug\net6.0\TaskManager.Data.Models.deps.json
+C:\Users\bhari\source\repos\TaskManager\TaskManager.Data.Models\bin\Debug\net6.0\TaskManager.Data.Models.runtimeconfig.json
+C:\Users\bhari\source\repos\TaskManager\TaskManager.Data.Models\bin\Debug\net6.0\TaskManager.Data.Models.dll
+C:\Users\bhari\source\repos\TaskManager\TaskManager.Data.Models\bin\Debug\net6.0\TaskManager.Data.Models.pdb
+C:\Users\bhari\source\repos\TaskManager\TaskManager.Data.Models\obj\Debug\net6.0\TaskManager.Data.Models.csproj.AssemblyReference.cache
+C:\Users\bhari\source\repos\TaskManager\TaskManager.Data.Models\obj\Debug\net6.0\TaskManager.Data.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bhari\source\repos\TaskManager\TaskManager.Data.Models\obj\Debug\net6.0\TaskManager.Data.Models.AssemblyInfoInputs.cache
+C:\Users\bhari\source\repos\TaskManager\TaskManager.Data.Models\obj\Debug\net6.0\TaskManager.Data.Models.AssemblyInfo.cs
+C:\Users\bhari\source\repos\TaskManager\TaskManager.Data.Models\obj\Debug\net6.0\TaskManager.Data.Models.csproj.CoreCompileInputs.cache
+C:\Users\bhari\source\repos\TaskManager\TaskManager.Data.Models\obj\Debug\net6.0\TaskManager.Data.Models.dll
+C:\Users\bhari\source\repos\TaskManager\TaskManager.Data.Models\obj\Debug\net6.0\refint\TaskManager.Data.Models.dll
+C:\Users\bhari\source\repos\TaskManager\TaskManager.Data.Models\obj\Debug\net6.0\TaskManager.Data.Models.pdb
+C:\Users\bhari\source\repos\TaskManager\TaskManager.Data.Models\obj\Debug\net6.0\TaskManager.Data.Models.genruntimeconfig.cache
+C:\Users\bhari\source\repos\TaskManager\TaskManager.Data.Models\obj\Debug\net6.0\ref\TaskManager.Data.Models.dll
