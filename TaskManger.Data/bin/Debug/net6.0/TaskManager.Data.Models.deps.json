@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "TaskManager.Data.Models/1.0.0": {
+        "runtime": {
+          "TaskManager.Data.Models.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TaskManager.Data.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

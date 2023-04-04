@@ -1,0 +1,30 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/* CSS code */
+.my-heading {
+    font-size: 30px; /* Set the font size for the heading */
+    font-weight: bold; /* Make the heading bold */
+    font-family: "Arial", sans-serif; /* Set the font family for the heading */
+}
+
+.my-paragraph {
+    font-size: 18px; /* Set the font size for the paragraph */
+    font-family: "Arial", sans-serif; /* Set the font family for the paragraph */
+}
