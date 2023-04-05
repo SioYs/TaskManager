@@ -1,0 +1,47 @@
+﻿@model bool
+
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+     h1,p {
+        font-family: Arial, sans-serif;
+    }
+</style>
+
+<div class="container">
+    <div class="jumbotron text-center ">
+        <h1 class="my-heading">Welcome to TaskManager</h1>
+        <p class="lead my-paragraph">Log in with you TaskManager account to continue.</p>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            @if (!User.Identity.IsAuthenticated)
+            {
+                <a href="@Url.Action("Login", "Account")" class="btn btn-primary mx-2">Log In</a>
+                <a href="@Url.Action("SignUp", "Account")" class="btn btn-primary mx-2">Sign Up</a>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+
+
+@*@model bool
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="d-flex flex-column justify-content-center align-items-center">
+    <h1>Welcome to My App</h1>
+    <p>Click the buttons below to login or sign up.</p>
+    <div class="btn-group">
+        <a class="btn btn-primary" href="/Account/Login">Login</a>
+        <a class="btn btn-success" href="/Account/SignUp">Sign Up</a>
+    </div>
+</div>*@

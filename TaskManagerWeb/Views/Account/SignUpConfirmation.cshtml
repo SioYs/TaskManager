@@ -1,0 +1,29 @@
+﻿@model string
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    @*<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/solar/css/solar.min.css" rel="stylesheet" />*@
+    <title>SignUp Confirmation</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Thank you for Signing Up!</h1>
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <p class="text-center">Your account has been successfully created.</p>
+                <p class="text-center">Please check your email <strong>@Model</strong> to verify your account.</p>
+            </div>
+        </div>
+    </div>
+
+    @*<script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/solar/js/solar.min.js"></script>*@
+</body>
+</html>

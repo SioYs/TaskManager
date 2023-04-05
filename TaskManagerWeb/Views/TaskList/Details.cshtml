@@ -1,0 +1,65 @@
+﻿@using TaskManager.Data.Models.Enums
+@model TaskList
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <h2 class="text-center mb-4">@Model.Name</h2>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Description:</h5>
+                    <p class="card-text">@Model.Description</p>
+                </div>
+            </div>
+            <h3>Tasks:</h3>
+
+
+            @if (Model.Tasks != null && Model.Tasks.Any())
+            {
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var task in Model.Tasks)
+                        {
+                            <tr>
+                                <td>@task.Name</td>
+                                <td>@task.Description</td>
+                                <td class="card-text">
+                                    @task.Status.ToString()
+
+                                    @if (task.Status == Status.inProgress)
+                                    {
+                                        <a asp-action="ChangeStatus" asp-controller="Task" asp-route-id="@Model.Id" asp-route-status="@Status.completed" class="btn btn-success">Complete</a>
+                                    }
+                                    else if (task.Status == Status.completed)
+                                    {
+                                        <a asp-action="ChangeStatus" asp-controller="Task" asp-route-id="@Model.Id" asp-route-status="@Status.inProgress" class="btn btn-warning">Restart</a>
+                                    }
+                                </td>
+                                
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <p>There are no tasks in this task list.</p>
+            }
+            <a asp-controller="Task" asp-action="Add" asp-route-taskListId="@Model.Id" class="btn btn-primary mb-4">Add Task</a>
+            <a asp-controller="TaskList" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-secondary mb-4">Edit</a>
+            <a asp-controller="TaskList" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger mb-4">Delete</a>
+            <a asp-controller="TaskList" asp-action="Index" class="btn btn-secondary mb-4">Back to Task Lists</a>
+        </div>
+    </div>
+</div>

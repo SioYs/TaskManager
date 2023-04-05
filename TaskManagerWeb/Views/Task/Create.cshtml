@@ -1,0 +1,49 @@
+﻿@using TaskManager.Data.Models.Enums
+@model Tasks
+
+
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Create Task</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" />
+             <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Description"></label>
+            <textarea asp-for="Description" class="form-control"></textarea>
+             <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="DueDate"></label>
+            <input asp-for="DueDate" class="form-control" />
+             <span asp-validation-for="DueDate" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="PrioirtyLevel" class="control-label"></label>
+            <select asp-for="PrioirtyLevel"
+                    class="form-control"
+                    asp-items="Html.GetEnumSelectList<PrioirtyLevel>()">
+                <option>Select type ...</option>
+            </select>
+            <span asp-validation-for="PrioirtyLevel" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create</button>
+        <a asp-controller="Task" asp-action="Index" class="btn btn-secondary" style="width:150px">Back</a>
+    </div>
+</form>
+
+@section Scripts
+{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+    
+}

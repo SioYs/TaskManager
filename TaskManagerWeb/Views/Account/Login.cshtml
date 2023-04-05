@@ -1,0 +1,32 @@
+﻿@using TaskManagerWeb.ViewModels
+@model LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container-fluid">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-4">
+            <form asp-controller="Account" asp-action="Login" method="post" class="border rounded p-4">
+                <h2 class="text-center mb-4">Login</h2>
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <div class="form-group">e
+                    <label asp-for="Email"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Password"></label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+                <a asp-controller="Account" asp-action="SingUp" class="btn btn-secondary btn-block mt-2">Sign Up</a>
+            </form>
+        </div>
+    </div>
+</div>
