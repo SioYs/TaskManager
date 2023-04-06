@@ -53,7 +53,8 @@
                                 <td width="20">@task.DueDate</td>
                                 <td width="20" class="text-end">
                                     <a asp-controller="Task" asp-action="Edit" asp-route-id="@task.Id" class="btn btn-secondary ">Edit</a>
-                                    <a asp-controller="Task" asp-action="Delete" asp-route-id="@task.Id" class="btn btn-danger ">Delete</a>
+                                    <a asp-controller="Task" asp-action="Delete" asp-route-id="@task.Id" class="btn btn-danger ">
+                                        <i class="bi bi-trash3"></i>Delete</a>
                                 </td>
 
                             </tr>
