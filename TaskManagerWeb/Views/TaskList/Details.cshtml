@@ -26,27 +26,36 @@
                             <th scope="col">Name</th>
                             <th scope="col">Description</th>
                             <th scope="col">Status</th>
+                            <th scope="col">Due Date</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach (var task in Model.Tasks)
                         {
                             <tr>
-                                <td>@task.Name</td>
-                                <td>@task.Description</td>
-                                <td class="card-text">
+                                <td width="20">@task.Name</td>
+                                <td width="20">@task.Description</td>
+                                
+                                <td width="20" @*class="card-text "*@>
                                     @task.Status.ToString()
 
                                     @if (task.Status == Status.inProgress)
                                     {
-                                        <a asp-action="ChangeStatus" asp-controller="Task" asp-route-id="@Model.Id" asp-route-status="@Status.completed" class="btn btn-success">Complete</a>
+                                        <a asp-controller="Task" asp-action="ChangeStatus" asp-route-id="@task.Id" asp-route-status="@Status.completed" class="btn btn-success ">Complete</a>
+
                                     }
                                     else if (task.Status == Status.completed)
                                     {
-                                        <a asp-action="ChangeStatus" asp-controller="Task" asp-route-id="@Model.Id" asp-route-status="@Status.inProgress" class="btn btn-warning">Restart</a>
+                                        <a asp-controller="Task" asp-action="ChangeStatus" asp-route-id="@task.Id" asp-route-status="@Status.inProgress" class="btn btn-warning ">Restart</a>
                                     }
                                 </td>
-                                
+                                <td width="20">@task.DueDate</td>
+                                <td width="20" class="text-end">
+                                    <a asp-controller="Task" asp-action="Edit" asp-route-id="@task.Id" class="btn btn-secondary ">Edit</a>
+                                    <a asp-controller="Task" asp-action="Delete" asp-route-id="@task.Id" class="btn btn-danger ">Delete</a>
+                                </td>
+
                             </tr>
                         }
                     </tbody>
@@ -56,9 +65,8 @@
             {
                 <p>There are no tasks in this task list.</p>
             }
-            <a asp-controller="Task" asp-action="Add" asp-route-taskListId="@Model.Id" class="btn btn-primary mb-4">Add Task</a>
-            <a asp-controller="TaskList" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-secondary mb-4">Edit</a>
-            <a asp-controller="TaskList" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger mb-4">Delete</a>
+            <a asp-controller="TaskList" asp-action="AddTask" asp-route-id="@Model.Id" class="btn btn-primary mb-4">Add Task</a>
+
             <a asp-controller="TaskList" asp-action="Index" class="btn btn-secondary mb-4">Back to Task Lists</a>
         </div>
     </div>

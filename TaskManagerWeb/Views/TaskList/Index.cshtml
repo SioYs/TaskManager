@@ -34,9 +34,13 @@
                 @foreach (var taskList in Model)
                 {
                     <tr>
-                        <td width="20%">@taskList.Name</td>
-                        <td width="20%">@taskList.Description</td>
-                        <td width="20%">
+                        <td width="10%">@taskList.Name</td>
+                        <td width="60%">
+                            <div >
+                                @taskList.Description
+                            </div>
+                        </td>
+                        <td width="10%">
                             @if (taskList.Tasks != null)
                             {
                                 <a asp-controller="TaskList" asp-action="AddTask" asp-route-id="@taskList.Id" class="btn btn-primary">Add Task</a>
@@ -49,7 +53,7 @@
 
                         <td width="20%" class="text-end">
                             <a asp-controller="TaskList" asp-action="Details" asp-route-id="@taskList.Id" class="btn btn-primary">Details</a>
-                            <a asp-controller="TaskList" asp-action="Edit" asp-route-id="@taskList.Id" class="btn btn-secondary">Edit</a>                            
+                            <a asp-controller="TaskList" asp-action="Edit" asp-route-id="@taskList.Id" class="btn btn-secondary">Edit</a>
                             <a asp-controller="TaskList" asp-action="Delete" asp-route-id="@taskList.Id" class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
