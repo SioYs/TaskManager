@@ -40,7 +40,7 @@ namespace TaskManagerWeb.TaskController
                     Name = taskViewModel.Name,
                     Description = taskViewModel.Description,
                     DueDate = taskViewModel.DueDate,
-                    Status = Status.InProgress,
+                    Status = Status.inProgress,
                     PrioirtyLevel = taskViewModel.PrioirtyLevel,
                     
                     TaskListId = taskViewModel.TaskListId

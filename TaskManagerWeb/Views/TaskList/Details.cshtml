@@ -42,14 +42,14 @@
                                 <td width="20">
                                     @task.Status.ToString()
 
-                                    @if (task.Status == Status.InProgress)
+                                    @if (task.Status == Status.inProgress)
                                     {
-                                        <a asp-controller="Task" asp-action="ChangeStatus" asp-route-id="@task.Id" asp-route-status="@Status.Completed" class="btn btn-success ">Complete</a>
+                                        <a asp-controller="Task" asp-action="ChangeStatus" asp-route-id="@task.Id" asp-route-status="@Status.completed" class="btn btn-success ">Complete</a>
 
                                     }
-                                    else if (task.Status == Status.Completed)
+                                    else if (task.Status == Status.completed)
                                     {
-                                        <a asp-controller="Task" asp-action="ChangeStatus" asp-route-id="@task.Id" asp-route-status="@Status.InProgress" class="btn btn-warning ">Restart</a>
+                                        <a asp-controller="Task" asp-action="ChangeStatus" asp-route-id="@task.Id" asp-route-status="@Status.inProgress" class="btn btn-warning ">Restart</a>
                                     }
                                 </td>
                                 <td width="20">@task.DueDate</td>
