@@ -74,12 +74,14 @@ namespace TaskManagerWeb.Controllers
                     Email = model.Email,
                     Password = model.Password
                 };
-                
+
                 //Creates Signed User
-                
+
 
                 //Creates User
+              
                 _userService.CreateUser(user);
+                _verificationService.SetLoggedName(user.Email);
                 Nav.isShowed = true;
                 return RedirectToAction("Index", "TaskList");
             }
