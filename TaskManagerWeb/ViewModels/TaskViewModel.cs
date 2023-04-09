@@ -7,4 +7,6 @@ public class TaskViewModel
     public string Description { get; set; }
     public DateTime DueDate { get; set; }
     public Status Status { get; set; }
+    public PrioirtyLevel PrioirtyLevel { get; set; }
+    public int  TaskListId{ get; set; }
 }

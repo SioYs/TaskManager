@@ -23,8 +23,8 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Description</th>
+                            <th>Name</th>
+                            <th>Description</th>
                             <th scope="col">Status</th>
                             <th scope="col">Due Date</th>
                             <th scope="col"></th>
@@ -34,27 +34,30 @@
                         @foreach (var task in Model.Tasks)
                         {
                             <tr>
-                                <td width="20">@task.Name</td>
-                                <td width="20">@task.Description</td>
-                                
-                                <td width="20" @*class="card-text "*@>
+                                <td width="20"><div>@task.Name</div></td>
+                                <td width="20">
+                                    <div>@task.Description</div>
+                                </td>
+
+                                <td width="20">
                                     @task.Status.ToString()
 
-                                    @if (task.Status == Status.inProgress)
+                                    @if (task.Status == Status.InProgress)
                                     {
-                                        <a asp-controller="Task" asp-action="ChangeStatus" asp-route-id="@task.Id" asp-route-status="@Status.completed" class="btn btn-success ">Complete</a>
+                                        <a asp-controller="Task" asp-action="ChangeStatus" asp-route-id="@task.Id" asp-route-status="@Status.Completed" class="btn btn-success ">Complete</a>
 
                                     }
-                                    else if (task.Status == Status.completed)
+                                    else if (task.Status == Status.Completed)
                                     {
-                                        <a asp-controller="Task" asp-action="ChangeStatus" asp-route-id="@task.Id" asp-route-status="@Status.inProgress" class="btn btn-warning ">Restart</a>
+                                        <a asp-controller="Task" asp-action="ChangeStatus" asp-route-id="@task.Id" asp-route-status="@Status.InProgress" class="btn btn-warning ">Restart</a>
                                     }
                                 </td>
                                 <td width="20">@task.DueDate</td>
-                                <td width="20" class="text-end">
+                                <td width="20">
                                     <a asp-controller="Task" asp-action="Edit" asp-route-id="@task.Id" class="btn btn-secondary ">Edit</a>
                                     <a asp-controller="Task" asp-action="Delete" asp-route-id="@task.Id" class="btn btn-danger ">
-                                        <i class="bi bi-trash3"></i>Delete</a>
+                                        <i class="bi bi-trash3"></i>Delete
+                                    </a>
                                 </td>
 
                             </tr>

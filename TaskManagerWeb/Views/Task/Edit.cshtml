@@ -1,8 +1,13 @@
-﻿@model TaskViewModel
+﻿@using TaskManager.Data.Models.Enums
+@model TaskViewModel
 
 <h1>Edit Task</h1>
 
 <form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="TaskListId" />
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="DueDate" />    
+    <input type="hidden" asp-for="Status" />
     <div class="form-group">
         <label asp-for="Name">Name:</label>
         <input asp-for="Name" class="form-control" />
@@ -14,9 +19,12 @@
         <span asp-validation-for="Description" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="PrioirtyLevel">Due Date:</label>
-        <input asp-for="PrioirtyLevel" class="form-control" />
-        <span asp-validation-for="PrioirtyLevel" class="text-danger"></span>
+        <label asp-for="PrioirtyLevel" class="control-label"></label>
+            <select asp-for="PrioirtyLevel"
+                    class="form-control"
+                    asp-items="Html.GetEnumSelectList<PrioirtyLevel>()">
+                <option>Select type ...</option>
+            </select>
     </div>
     
     <button type="submit" class="btn btn-primary">Save</button>

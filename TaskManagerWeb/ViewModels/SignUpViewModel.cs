@@ -5,16 +5,20 @@ namespace TaskManagerWeb.ViewModels
     public class SignUpViewModel
     {
         [Required]
+        [NameValidation]
         public string Name { get; set; }
 
         [Required]
+        [UsernameValidation]
         public string Username { get; set; }
 
         [Required]
-        [EmailAddress]
+        [EmailValidation]
+        
         public string Email { get; set; }
 
         [Required]
+        [PasswordValidation]
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
